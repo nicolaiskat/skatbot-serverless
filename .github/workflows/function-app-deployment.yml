@@ -2,10 +2,12 @@ name: Function App Deployment
 on:
   push:
     branches: 
-      - main
       - develop
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
-
+  
 jobs:
   cd-build-deploy-dev:
     name: Continuous Deployment - Development
