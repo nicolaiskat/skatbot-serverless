@@ -122,6 +122,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Github actions
+.github/workflows/
+
 # Azure Functions artifacts
 bin
 obj
