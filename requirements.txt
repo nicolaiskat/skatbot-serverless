@@ -7,8 +7,3 @@ discord.py
 pymongo
 requests
 tabulate
-base64
-datetime
-aiohttp
-os
-time
