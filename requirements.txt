@@ -5,6 +5,10 @@
 azure-functions
 discord.py
 pymongo
-python-dotenv
 requests
 tabulate
+base64
+datetime
+aiohttp
+os
+time
