@@ -170,3 +170,6 @@ def generateLeaderboardMessage(leaderboard):
 {message}
 ```
 """
+
+def serviceGetPlayers():
+    return getPlayers()
