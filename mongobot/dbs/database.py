@@ -1,10 +1,9 @@
 import logging
 from pymongo import MongoClient
-from dotenv import load_dotenv
-load_dotenv()
 import os
 
 def get_database():
+    logging.info('Get dabase')
     uri = os.environ['MONGO_URI']
     client = MongoClient(uri)
     return client[os.environ['CSGOSTATS_DATABASE']]

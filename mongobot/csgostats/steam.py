@@ -4,8 +4,6 @@ import logging
 import base64
 import requests
 import time
-from dotenv import load_dotenv
-load_dotenv()
 
 API_KEY = base64.b64decode(os.environ['STEAM_API_KEY']).decode('utf-8')
 

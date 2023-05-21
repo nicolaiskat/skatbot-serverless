@@ -4,8 +4,6 @@ import logging
 import base64
 import requests
 import json
-from dotenv import load_dotenv
-load_dotenv()
 
 PASSWORD = base64.b64decode(os.environ['LEETIFY_PASSWORD']).decode('utf-8')
 

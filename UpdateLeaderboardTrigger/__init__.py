@@ -9,6 +9,7 @@ import aiohttp
 import azure.functions as func
 
 async def main(req: func.HttpRequest) -> func.HttpResponse:
+    logging.info('Update leaderboard trigger running')
     async with aiohttp.ClientSession() as session:
         url = os.environ['DISCORD_WEBHOOK']
         webhook = Webhook.from_url(url, session=session)

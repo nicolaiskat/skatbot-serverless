@@ -65,6 +65,7 @@ def get_leaderboards_this_month():
     return leaderboard
 
 def start():
+    logging.info('Get matches started')
     new_matches = get_last_match_details()
     if not new_matches:
         return

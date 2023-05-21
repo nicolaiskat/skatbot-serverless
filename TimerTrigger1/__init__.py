@@ -11,6 +11,7 @@ import azure.functions as func
 
 async def main(mytimer: func.TimerRequest) -> None:
     async with aiohttp.ClientSession() as session:
+        logging.info('Timed trigger running')
         url = os.environ['DISCORD_WEBHOOK']
         webhook = Webhook.from_url(url, session=session)
         result = start()
