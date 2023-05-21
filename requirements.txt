@@ -5,7 +5,6 @@
 azure-functions
 discord.py
 pymongo
-dotenv
 python-dotenv
 requests
 tabulate
