@@ -7,4 +7,3 @@ discord.py
 pymongo
 requests
 tabulate
-aiohttp
