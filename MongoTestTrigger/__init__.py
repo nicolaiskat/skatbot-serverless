@@ -1,6 +1,6 @@
 import logging
 import os
-from mongobot.matchservice import serviceGetPlayers
+from mongobot import serviceGetPlayers
 
 import azure.functions as func
 

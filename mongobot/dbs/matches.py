@@ -32,7 +32,7 @@ def deleteMatches():
         collection.delete_many({})
     except Exception as e:
         print("Failed to execute the above query", e)
-   
+
 def getMatch(match):
     try:
         result = collection.find_one({ '_id': match['matchId']})

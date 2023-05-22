@@ -31,7 +31,6 @@ def updateStat(stat):
     except Exception as e:
         print("Failed to execute the above query", e)
      
-
 def insertNewStat(stat):
     try:
         stat['steam64Id'] = int(stat['steam64Id'])
