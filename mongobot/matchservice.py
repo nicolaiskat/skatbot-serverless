@@ -168,4 +168,4 @@ def generateLeaderboardMessage(leaderboard):
 """
 
 def serviceGetPlayers():
-    return getPlayers()
+    return [{'name': 'nico'}]
