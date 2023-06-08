@@ -37,3 +37,5 @@ async def main(mytimer: func.TimerRequest) -> None:
         rankedUpMesage = generateRankupMessage()
         if rankedUpMesage is not None:
             await webhook.send(content=rankedUpMesage, username="CSGO Rank", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
+
+    logging.info("Time trigger finished")
