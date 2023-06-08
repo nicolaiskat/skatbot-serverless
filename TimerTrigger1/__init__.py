@@ -30,7 +30,6 @@ async def main(mytimer: func.TimerRequest) -> None:
         message = generateLeaderboardMessage(result)
         await webhook.send(content=message, username="CSGO Leaderboard", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
         
-        
         derankedMessage = generateDerankMessage()
         if derankedMessage is not None:
             await webhook.send(content=derankedMessage, username="CSGO Rank", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")

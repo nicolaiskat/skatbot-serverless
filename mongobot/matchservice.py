@@ -1,13 +1,16 @@
 import time
 import logging
-from .steam import  find_matches
-from .leetify import get_matches
-from .matchmapper import clean_match_details, map_leaderboard, convertToStringRank
-from .players import updatePlayer, getPlayerIds, getPlayers
-from .matches import insertNewMatch, getCodes
-from .stats import insertNewStat, getStatsByMonth, singlePlayersLast2Matches
+from csgostats.steam import  find_matches
+from csgostats.leetify import get_matches
+from csgostats.matchmapper import clean_match_details, map_leaderboard, convertToStringRank
+from dbs.players import updatePlayer, getPlayerIds, getPlayers
+from dbs.matches import insertNewMatch, getCodes
+from dbs.stats import insertNewStat, getStatsByMonth, singlePlayersLast2Matches
 from datetime import datetime
 from tabulate import tabulate
+
+def serviceGetPlayers():
+    return getPlayers()
 
 # 2
 def find_friends_from_matches(matches):
@@ -170,6 +173,3 @@ def generateLeaderboardMessage(leaderboard):
 {message}
 ```
 """
-
-def serviceGetPlayers():
-    return [{'name': 'nico'}]
