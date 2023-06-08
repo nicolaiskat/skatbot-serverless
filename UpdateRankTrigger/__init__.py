@@ -1,5 +1,5 @@
 import logging
-from mongobot.matchservice import allRanksMessage
+from modules.matchservice import allRanksMessage
 import os
 import discord
 from datetime import datetime

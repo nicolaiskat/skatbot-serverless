@@ -1,5 +1,5 @@
 import logging
-from mongobot.matchservice import generateLeaderboardMessage, get_leaderboards_this_month
+from modules.matchservice import generateLeaderboardMessage, get_leaderboards_this_month
 import os
 import discord
 from datetime import datetime

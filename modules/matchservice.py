@@ -68,10 +68,10 @@ def get_leaderboards_this_month():
     return leaderboard
 
 def start():
-    logging.info('Get matches started')
     new_matches = get_last_match_details()
     if not new_matches:
         return
+    
     update_leaderboard(new_matches)
     leaderboard = get_leaderboards_this_month()
     return leaderboard
@@ -170,6 +170,7 @@ def generateLeaderboardMessage(leaderboard):
     message = tabulate(table, headers='firstrow', tablefmt='fancy_grid')
     return f"""
 ```
+This month's leaderboard.
 {message}
 ```
 """
