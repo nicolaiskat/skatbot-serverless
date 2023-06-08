@@ -24,7 +24,6 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
 
         result = start()
         if result == None:
-            await webhook.send(embed=embed, username="CSGO Leaderboard", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
             return func.HttpResponse(f"No new matches")   
 
         await webhook.send(embed=embed, username="CSGO Leaderboard", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
