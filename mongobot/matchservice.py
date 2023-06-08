@@ -1,7 +1,11 @@
 import time
 import logging
-from .csgostats import find_matches, get_matches, clean_match_details, map_leaderboard, convertToStringRank
-from .dbs import updatePlayer, getPlayerIds, getPlayers, insertNewMatch, getCodes, insertNewStat, getStatsByMonth, singlePlayersLast2Matches
+from .steam import  find_matches
+from .leetify import get_matches
+from .matchmapper import clean_match_details, map_leaderboard, convertToStringRank
+from .players import updatePlayer, getPlayerIds, getPlayers
+from .matches import insertNewMatch, getCodes
+from .stats import insertNewStat, getStatsByMonth, singlePlayersLast2Matches
 from datetime import datetime
 from tabulate import tabulate
 
