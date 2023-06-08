@@ -22,7 +22,12 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
             description="Click on the link above to update leaderboard", 
             timestamp=datetime.now()
             )
+        
         embed.set_thumbnail(url="https://images.freeimages.com/fic/images/icons/2799/flat_icons/256/trophy.png")
+
+        if message == None:
+            return func.HttpResponse(f"No matches played this month")
+
         await webhook.send(embed=embed, content=message, username="CSGO Leaderboard", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
         
     return func.HttpResponse(f"Leaderboard updated successfully.")

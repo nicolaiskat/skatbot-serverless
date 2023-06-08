@@ -17,7 +17,7 @@ def login_leetify():
     credentials = { 'email': 'jegerrockstar@gmail.com', 'password': PASSWORD }
     result = requests.post(url, json = credentials)
     jwt = result.json()['token']
-
+    
 def get_general_data():
     url = root_url + '/general-data'
     headers = { 'Authorization': 'Bearer ' + jwt }

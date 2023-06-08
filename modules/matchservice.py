@@ -26,18 +26,12 @@ def get_last_match_details():
     new_match_details = []
     old_match_codes = getCodes()
     for friend in getPlayers():
-        if friend['authCode'] == '':
-            continue
-        newest_code = 'n/a'
         result = find_matches(friend)
         # Finds new match codes not analyzed
-        if result is not None:
+        if result:
             for code in result:
                 if code not in old_match_codes and code not in new_match_codes:
-                    newest_code = code
                     new_match_codes.append(code)
-                else:
-                    pass
                 
         # If any, analyze new matches
         if new_match_codes:
@@ -46,10 +40,9 @@ def get_last_match_details():
                 new_match_details.append(match)
                         
         # Sets latest knownCode for player
-        if newest_code != 'n/a':
-            friend['knownCode'] = newest_code
+        if result:
+            friend['knownCode'] = result[-1]
             updatePlayer(friend)
-        time.sleep(1)
         
     return new_match_details
 
@@ -64,7 +57,9 @@ def update_leaderboard(matches):
 def get_leaderboards_this_month():
     currentMonth = datetime.now().month
     leaderboard = getStatsByMonth(currentMonth)
+    logging.info(leaderboard)
     leaderboard = map_leaderboard(leaderboard)
+    
     return leaderboard
 
 def start():
@@ -163,6 +158,8 @@ def generateRankupMessage():
 
 
 def generateLeaderboardMessage(leaderboard):
+    if not leaderboard:
+        return
     table = [leaderboard[0].keys()]
     for player in leaderboard:
         table.append(player.values())

@@ -78,6 +78,8 @@ def clean_match_details(friends, data):
     return match
 
 def map_leaderboard(leaderboard):
+    if not leaderboard:
+        return []
     result = []
     for player in leaderboard:
         result.append({

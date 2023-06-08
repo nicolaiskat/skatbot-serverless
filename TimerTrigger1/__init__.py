@@ -1,5 +1,5 @@
 import logging
-from modules.matchservice import start, generateLeaderboardMessage, get_leaderboards_this_month, generateDerankMessage, generateRankupMessage
+from modules.matchservice import start, generateLeaderboardMessage
 import os
 import discord
 from datetime import datetime
@@ -10,14 +10,11 @@ import azure.functions as func
 
 
 async def main(mytimer: func.TimerRequest) -> None:
+    logging.info('Timed trigger running')
     async with aiohttp.ClientSession() as session:
-        logging.info('Timed trigger running')
         url = os.environ['DISCORD_WEBHOOK']
         webhook = Webhook.from_url(url, session=session)
-        result = start()
-        if result == None:
-            return
-        
+
         embed = discord.Embed(
             title='Update leaderboard', 
             url=os.environ['LEADERBOARD_URL'],
@@ -25,17 +22,15 @@ async def main(mytimer: func.TimerRequest) -> None:
             timestamp=datetime.now()
         )
         embed.set_thumbnail(url="https://images.freeimages.com/fic/images/icons/2799/flat_icons/256/trophy.png")
+
+        result = start()
+        if result == None:
+            await webhook.send(embed=embed, username="CSGO Leaderboard", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
+            return func.HttpResponse(f"No new matches")   
+
         await webhook.send(embed=embed, username="CSGO Leaderboard", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
         
         message = generateLeaderboardMessage(result)
         await webhook.send(content=message, username="CSGO Leaderboard", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
         
-        derankedMessage = generateDerankMessage()
-        if derankedMessage is not None:
-            await webhook.send(content=derankedMessage, username="CSGO Rank", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
-        
-        rankedUpMesage = generateRankupMessage()
-        if rankedUpMesage is not None:
-            await webhook.send(content=rankedUpMesage, username="CSGO Rank", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
-
-    logging.info("Time trigger finished")
+    return func.HttpResponse(f"Updated matches successfully.")
