@@ -1,0 +1,9 @@
+[
+    {"_id":{"$numberLong":"76561198010182083"},"steam64Id":{"$numberLong":"76561198010182083"},"name":"Chris","knownCode":"CSGO-qTyFv-NDuLW-8dqJe-dpLYb-YPVeL","authCode":"OVQyQS1TSjRIUS04V0hN"},
+    {"_id":{"$numberLong":"76561198037594292"},"steam64Id":{"$numberLong":"76561198037594292"},"name":"Høj","knownCode":"CSGO-Bsn7z-ueqPn-RAzM2-DhUN8-LpphH","authCode":""},
+    {"_id":{"$numberLong":"76561198023097159"},"steam64Id":{"$numberLong":"76561198023097159"},"name":"G","knownCode":"CSGO-CdmWy-bvcHx-zkWPe-ub3CN-PxXHK","authCode":""},
+    {"_id":{"$numberLong":"76561198020076435"},"steam64Id":{"$numberLong":"76561198020076435"},"name":"Bert","knownCode":"CSGO-qL7dS-AcxAa-cjfQ8-PyuNU-QmztJ","authCode":"OEJKMi1aUDJIQS0yV1pB"},
+    {"_id":{"$numberLong":"76561198036739830"},"steam64Id":{"$numberLong":"76561198036739830"},"name":"Sidney","knownCode":"CSGO-hGWmM-sFfTO-2yfXU-36uK4-OAqVQ","authCode":"OUJYTC1GVzJINC1ZQlNC"},
+    {"_id":{"$numberLong":"76561198255756814"},"steam64Id":{"$numberLong":"76561198255756814"},"name":"Skat","knownCode":"CSGO-okqzi-kCwJT-H4i2f-oi39h-GEuWK","authCode":"NzMzSC0zTVhIMy02VFpB"},
+    {"_id":{"$numberLong":"76561198152484060"},"steam64Id":{"$numberLong":"76561198152484060"},"name":"Mart","knownCode":"CSGO-UVnwP-uWKTy-MaM69-UKTSw-4L9PL","authCode":"NlQ4Ui1aNzZINi01VkhI"}
+]

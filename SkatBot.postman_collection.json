@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "162e23ce-2206-4618-936e-f8746e36fd0b",
+		"name": "SkatBot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19720668"
+	},
+	"item": [
+		{
+			"name": "Localhost",
+			"item": [
+				{
+					"name": "Manually Add New Matches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": [\r\n    \"300cb661-5317-465b-9812-422ba8780a47\",\r\n    \"7a96f798-1191-4394-bfb8-8ec531fc6667\",\r\n    \"71de8d33-0839-424a-a42a-d4fd6b1f0a1d\",\r\n    \"acdf4e11-1c3f-45ce-84e9-dd391db2e802\",\r\n    \"bf43f57c-ae2f-4aad-b994-7504de459bc8\",\r\n    \"057cbcc1-0cce-4b62-820f-eb747c16f432\",\r\n    \"f5b08c6e-79f3-4f59-ae04-86036a769c0e\",\r\n    \"dd2b6465-03a6-4523-ae43-a08b045f910e\",\r\n    \"7057aa4b-c549-42d7-9c8c-501a7883490e\",\r\n    \"f2445e37-0fcb-408f-ae4d-3fc0f30aee70\",\r\n    \"e9448f4e-a515-4729-bf31-dcdd5bff955b\",\r\n    \"94fe7d0e-6b28-423d-ba10-d5d0a4bc52c7\",\r\n    \"b5daabb7-fd08-4079-86d3-37920caee1bf\",\r\n    \"7a96f798-1191-4394-bfb8-8ec531fc6667\",\r\n    \"554ce90d-f5d0-4b9c-b211-a6ac32473175\",\r\n    \"6c05b095-8631-4c03-a580-d8ad0d044e18\",\r\n    \"39788382-e4a3-42f9-814e-3777f169dd10\",\r\n    \"b4b57a93-beab-4041-aa7a-f89db8b3078e\",\r\n    \"46d20ad1-acef-4726-8aa7-08036157569c\",\r\n    \"89bcd1fe-e228-4fd6-8db4-1ad3603bf34a\",\r\n    \"37ae8381-8ac1-43ae-8514-64fd44157ebb\",\r\n    \"04703f44-c31a-47a8-b097-bd392a1380bf\",\r\n    \"c5974b2f-761e-4f21-bbc2-b8e4c4ad7980\",\r\n    \"193a18ee-7ede-4a95-a290-16e53c1e529f\",\r\n    \"630d0527-2309-43c3-a0b5-4809c84dd778\",\r\n    \"16877635-782e-40c9-886d-de59decabc2a\",\r\n    \"300cb661-5317-465b-9812-422ba8780a47\",\r\n    \"07ef9066-91cb-408f-8b29-188a987e9ffb\",\r\n    \"56cdbc49-fa50-435a-b322-84e7324acd79\",\r\n    \"ca2ad25d-5f80-4e81-b485-196b536cef0f\",\r\n    \"865dbefe-0d6b-49b3-990a-9e1503d8c5b8\",\r\n    \"646e684e-46f8-4f8d-b8a2-ae85e36b8d38\",\r\n    \"7a72f39c-1351-4246-b8cd-2deb6c05aff1\",\r\n    \"028fb2ed-f908-497b-8919-fac9326de5cd\",\r\n    \"3540cb1a-18e2-4530-9608-9699f2421d2e\",\r\n    \"90f53e90-cb4d-4d66-984e-1eb44cd7757d\",\r\n    \"e59f43cd-05e6-4465-b50d-91c171a5405a\",\r\n    \"1f5eba1e-e62b-4f15-bab1-b2294274e344\",\r\n    \"3540cb1a-18e2-4530-9608-9699f2421d2e\",\r\n    \"e59f43cd-05e6-4465-b50d-91c171a5405a\",\r\n    \"7363e5ca-5b88-4a69-b906-26e77f6ecb3b\",\r\n    \"6b13a448-2683-4f60-aabf-2ae77498bbaf\"\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{localhost}}/api/UpdateMatchesManually",
+							"protocol": "http",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"UpdateMatchesManually"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MongoTestTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{localhost}}/api/MongoTestTrigger",
+							"protocol": "http",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"MongoTestTrigger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateLeaderboardTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{localhost}}/api/UpdateLeaderboardTrigger",
+							"protocol": "http",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"UpdateLeaderboardTrigger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMatchesTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{localhost}}/api/UpdateMatchesTrigger",
+							"protocol": "http",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"UpdateMatchesTrigger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRanksTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{localhost}}/api/UpdateRankTrigger",
+							"protocol": "http",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"UpdateRankTrigger"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Development",
+			"item": [
+				{
+					"name": "Manually Add New Matches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": [\r\n    \"300cb661-5317-465b-9812-422ba8780a47\",\r\n    \"7a96f798-1191-4394-bfb8-8ec531fc6667\",\r\n    \"71de8d33-0839-424a-a42a-d4fd6b1f0a1d\",\r\n    \"acdf4e11-1c3f-45ce-84e9-dd391db2e802\",\r\n    \"bf43f57c-ae2f-4aad-b994-7504de459bc8\",\r\n    \"057cbcc1-0cce-4b62-820f-eb747c16f432\",\r\n    \"f5b08c6e-79f3-4f59-ae04-86036a769c0e\",\r\n    \"dd2b6465-03a6-4523-ae43-a08b045f910e\",\r\n    \"7057aa4b-c549-42d7-9c8c-501a7883490e\",\r\n    \"f2445e37-0fcb-408f-ae4d-3fc0f30aee70\",\r\n    \"e9448f4e-a515-4729-bf31-dcdd5bff955b\",\r\n    \"94fe7d0e-6b28-423d-ba10-d5d0a4bc52c7\",\r\n    \"b5daabb7-fd08-4079-86d3-37920caee1bf\",\r\n    \"7a96f798-1191-4394-bfb8-8ec531fc6667\",\r\n    \"554ce90d-f5d0-4b9c-b211-a6ac32473175\",\r\n    \"6c05b095-8631-4c03-a580-d8ad0d044e18\",\r\n    \"39788382-e4a3-42f9-814e-3777f169dd10\",\r\n    \"b4b57a93-beab-4041-aa7a-f89db8b3078e\",\r\n    \"46d20ad1-acef-4726-8aa7-08036157569c\",\r\n    \"89bcd1fe-e228-4fd6-8db4-1ad3603bf34a\",\r\n    \"37ae8381-8ac1-43ae-8514-64fd44157ebb\",\r\n    \"04703f44-c31a-47a8-b097-bd392a1380bf\",\r\n    \"c5974b2f-761e-4f21-bbc2-b8e4c4ad7980\",\r\n    \"193a18ee-7ede-4a95-a290-16e53c1e529f\",\r\n    \"630d0527-2309-43c3-a0b5-4809c84dd778\",\r\n    \"16877635-782e-40c9-886d-de59decabc2a\",\r\n    \"300cb661-5317-465b-9812-422ba8780a47\",\r\n    \"07ef9066-91cb-408f-8b29-188a987e9ffb\",\r\n    \"56cdbc49-fa50-435a-b322-84e7324acd79\",\r\n    \"ca2ad25d-5f80-4e81-b485-196b536cef0f\",\r\n    \"865dbefe-0d6b-49b3-990a-9e1503d8c5b8\",\r\n    \"646e684e-46f8-4f8d-b8a2-ae85e36b8d38\",\r\n    \"7a72f39c-1351-4246-b8cd-2deb6c05aff1\",\r\n    \"028fb2ed-f908-497b-8919-fac9326de5cd\",\r\n    \"3540cb1a-18e2-4530-9608-9699f2421d2e\",\r\n    \"90f53e90-cb4d-4d66-984e-1eb44cd7757d\",\r\n    \"e59f43cd-05e6-4465-b50d-91c171a5405a\",\r\n    \"1f5eba1e-e62b-4f15-bab1-b2294274e344\",\r\n    \"3540cb1a-18e2-4530-9608-9699f2421d2e\",\r\n    \"e59f43cd-05e6-4465-b50d-91c171a5405a\",\r\n    \"7363e5ca-5b88-4a69-b906-26e77f6ecb3b\",\r\n    \"6b13a448-2683-4f60-aabf-2ae77498bbaf\"\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{dev-url}}/api/UpdateMatchesManually",
+							"protocol": "http",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"UpdateMatchesManually"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MongoTestTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{dev-url}}/api/MongoTestTrigger",
+							"protocol": "http",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"MongoTestTrigger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateLeaderboardTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{dev-url}}/api/UpdateLeaderboardTrigger",
+							"protocol": "http",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"UpdateLeaderboardTrigger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMatchesTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{dev-url}}/api/UpdateMatchesTrigger",
+							"protocol": "http",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"UpdateMatchesTrigger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRanksTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{dev-url}}/api/UpdateRankTrigger",
+							"protocol": "http",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"UpdateRankTrigger"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Production",
+			"item": [
+				{
+					"name": "Manually Add New Matches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": [\r\n    \"300cb661-5317-465b-9812-422ba8780a47\",\r\n    \"7a96f798-1191-4394-bfb8-8ec531fc6667\",\r\n    \"71de8d33-0839-424a-a42a-d4fd6b1f0a1d\",\r\n    \"acdf4e11-1c3f-45ce-84e9-dd391db2e802\",\r\n    \"bf43f57c-ae2f-4aad-b994-7504de459bc8\",\r\n    \"057cbcc1-0cce-4b62-820f-eb747c16f432\",\r\n    \"f5b08c6e-79f3-4f59-ae04-86036a769c0e\",\r\n    \"dd2b6465-03a6-4523-ae43-a08b045f910e\",\r\n    \"7057aa4b-c549-42d7-9c8c-501a7883490e\",\r\n    \"f2445e37-0fcb-408f-ae4d-3fc0f30aee70\",\r\n    \"e9448f4e-a515-4729-bf31-dcdd5bff955b\",\r\n    \"94fe7d0e-6b28-423d-ba10-d5d0a4bc52c7\",\r\n    \"b5daabb7-fd08-4079-86d3-37920caee1bf\",\r\n    \"7a96f798-1191-4394-bfb8-8ec531fc6667\",\r\n    \"554ce90d-f5d0-4b9c-b211-a6ac32473175\",\r\n    \"6c05b095-8631-4c03-a580-d8ad0d044e18\",\r\n    \"39788382-e4a3-42f9-814e-3777f169dd10\",\r\n    \"b4b57a93-beab-4041-aa7a-f89db8b3078e\",\r\n    \"46d20ad1-acef-4726-8aa7-08036157569c\",\r\n    \"89bcd1fe-e228-4fd6-8db4-1ad3603bf34a\",\r\n    \"37ae8381-8ac1-43ae-8514-64fd44157ebb\",\r\n    \"04703f44-c31a-47a8-b097-bd392a1380bf\",\r\n    \"c5974b2f-761e-4f21-bbc2-b8e4c4ad7980\",\r\n    \"193a18ee-7ede-4a95-a290-16e53c1e529f\",\r\n    \"630d0527-2309-43c3-a0b5-4809c84dd778\",\r\n    \"16877635-782e-40c9-886d-de59decabc2a\",\r\n    \"300cb661-5317-465b-9812-422ba8780a47\",\r\n    \"07ef9066-91cb-408f-8b29-188a987e9ffb\",\r\n    \"56cdbc49-fa50-435a-b322-84e7324acd79\",\r\n    \"ca2ad25d-5f80-4e81-b485-196b536cef0f\",\r\n    \"865dbefe-0d6b-49b3-990a-9e1503d8c5b8\",\r\n    \"646e684e-46f8-4f8d-b8a2-ae85e36b8d38\",\r\n    \"7a72f39c-1351-4246-b8cd-2deb6c05aff1\",\r\n    \"028fb2ed-f908-497b-8919-fac9326de5cd\",\r\n    \"3540cb1a-18e2-4530-9608-9699f2421d2e\",\r\n    \"90f53e90-cb4d-4d66-984e-1eb44cd7757d\",\r\n    \"e59f43cd-05e6-4465-b50d-91c171a5405a\",\r\n    \"1f5eba1e-e62b-4f15-bab1-b2294274e344\",\r\n    \"3540cb1a-18e2-4530-9608-9699f2421d2e\",\r\n    \"e59f43cd-05e6-4465-b50d-91c171a5405a\",\r\n    \"7363e5ca-5b88-4a69-b906-26e77f6ecb3b\",\r\n    \"6b13a448-2683-4f60-aabf-2ae77498bbaf\"\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{prod-url}}/api/UpdateMatchesManually",
+							"protocol": "http",
+							"host": [
+								"{{prod-url}}"
+							],
+							"path": [
+								"api",
+								"UpdateMatchesManually"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MongoTestTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{prod-url}}/api/MongoTestTrigger",
+							"protocol": "http",
+							"host": [
+								"{{prod-url}}"
+							],
+							"path": [
+								"api",
+								"MongoTestTrigger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateLeaderboardTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{prod-url}}/api/UpdateLeaderboardTrigger",
+							"protocol": "http",
+							"host": [
+								"{{prod-url}}"
+							],
+							"path": [
+								"api",
+								"UpdateLeaderboardTrigger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMatchesTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{prod-url}}/api/UpdateMatchesTrigger",
+							"protocol": "http",
+							"host": [
+								"{{prod-url}}"
+							],
+							"path": [
+								"api",
+								"UpdateMatchesTrigger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRanksTrigger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{prod-url}}/api/UpdateRankTrigger",
+							"protocol": "http",
+							"host": [
+								"{{prod-url}}"
+							],
+							"path": [
+								"api",
+								"UpdateRankTrigger"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "localhost:7071",
+			"type": "string"
+		},
+		{
+			"key": "dev-url",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "prod-url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
