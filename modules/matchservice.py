@@ -128,7 +128,7 @@ def allRanksMessage():
         table.append(rank.values())
     message += tabulate(table, headers='firstrow')
         
-    message += f'\n\nLast updated: {datetime.now().date()} {datetime.now().time()}```'
+    message += '```'
     return message
 
 def generateDerankMessage():
