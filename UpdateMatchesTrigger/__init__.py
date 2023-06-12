@@ -23,12 +23,7 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
         embed.set_thumbnail(url="https://images.freeimages.com/fic/images/icons/2799/flat_icons/256/trophy.png")
 
         result = start()
-        if result == None:
-            return func.HttpResponse(f"No new matches")   
-
-        await webhook.send(embed=embed, username="CSGO Leaderboard", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
+        if result:
+            return func.HttpResponse(f"Updated matches successfully.")
         
-        message = generateLeaderboardMessage(result)
-        await webhook.send(content=message, username="CSGO Leaderboard", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
-        
-    return func.HttpResponse(f"Updated matches successfully.")
+        return func.HttpResponse(f"No new matches")   

@@ -25,4 +25,4 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
         embed.set_thumbnail(url="https://pokebase.dk/media/icons/badges/gbl/combat_rank_1.png")
         await webhook.send(embed=embed, content=message, username="CSGO Ranks", avatar_url="https://b.thumbs.redditmedia.com/RQpNAfaZFmfYQBplnYiFIc21A14eFcWT7ohzI50ISuM.png")
 
-    return func.HttpResponse(f"Leaderboard updated successfully.")
+    return func.HttpResponse(f"Ranks updated succesfully.")

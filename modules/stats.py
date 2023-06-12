@@ -69,11 +69,9 @@ def deleteStats():
 def getStatsByMonth(month):
     try:
         year = datetime.now().year
-        monthRange = monthrange(year, month+1)
+        monthRange = monthrange(year, month)
         firstDayOfMonth = datetime(year=year, month=month, day=1, hour=0, minute=0, second=0,)
         lastDayOfMonth = datetime(year=year,  month=month, day=monthRange[1], hour=0, minute=0, second=0,)
-        logging.info(firstDayOfMonth)
-        logging.info(lastDayOfMonth)
         firstDayOfMonthId = ObjectId.from_datetime(firstDayOfMonth)
         lastDayOfMonthId = ObjectId.from_datetime(lastDayOfMonth)
         
@@ -83,7 +81,7 @@ def getStatsByMonth(month):
                 {
                     '$match' : 
                         {
-                            '_id': {'$gt':firstDayOfMonthId, '$lt':lastDayOfMonthId},
+                            'gameFinishedAt': {'$gte':firstDayOfMonth, '$lte':lastDayOfMonth},
                             'steam64Id': player['steam64Id'],
                         }
                 },
@@ -115,7 +113,7 @@ def getStatsByMonth(month):
 def singlePlayersLast2Matches(steam64Id):
     try:
         player = getPlayer({ 'steam64Id': steam64Id})
-        result = collection.find({ 'steam64Id': player['steam64Id']}).sort("_id", -1).limit(2)
+        result = collection.find({ 'steam64Id': player['steam64Id']}).sort("gameFinishedAt", -1).limit(2)
         stats = []
         if result:
             for stat in result:

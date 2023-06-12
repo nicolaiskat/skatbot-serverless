@@ -55,3 +55,20 @@ def get_matches(steamId64, codes):
             if result["steamShareCode"] in codes:
                 match_list.append(result)
     return match_list
+
+      
+def get_matches_by_ids(matchIds):
+    login_leetify()
+    match_list = []
+    for matchId in matchIds:    
+        url = root_url + f'/games/{matchId}'
+        headers = { 'Authorization': 'Bearer ' + jwt }
+        result = requests.get(url, timeout = 30, headers = headers)
+        status = result.status_code
+        if (status == 401) or (status == 403):
+            login_leetify()
+            return get_matches_by_ids(matchIds)
+        if 200 <= status and status <= 299:
+            result = json.loads(result.text)
+            match_list.append(result)
+    return match_list

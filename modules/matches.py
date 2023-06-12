@@ -53,6 +53,12 @@ def getCodes():
         codes.append(match['code'])
     return codes
 
+def getMatchIds():
+    matches = getMatches()
+    matchIds = []
+    for match in matches:
+        matchIds.append(match['matchId'])
+    return matchIds
 
 """ insertNewMatch({
   "matchId": "3540cb1a-18e2-4530-9608-9699f2421d2e",

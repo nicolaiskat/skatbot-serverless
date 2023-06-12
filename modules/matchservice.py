@@ -1,13 +1,16 @@
 import time
 import logging
+import json
 from .steam import  find_matches
-from .leetify import get_matches
+from .leetify import get_matches, get_player_profile, get_matches_by_ids
 from .matchmapper import clean_match_details, map_leaderboard, convertToStringRank
 from .players import updatePlayer, getPlayerIds, getPlayers
-from .matches import insertNewMatch, getCodes
-from .stats import insertNewStat, getStatsByMonth, singlePlayersLast2Matches
+from .matches import insertNewMatch, getCodes, getMatchIds, deleteMatches
+from .stats import insertNewStat, getStatsByMonth, singlePlayersLast2Matches, deleteStats
 from datetime import datetime
 from tabulate import tabulate
+from dateutil import parser
+
 
 def serviceGetPlayers():
     return getPlayers()
@@ -51,19 +54,19 @@ def update_leaderboard(matches):
     for match in matches:
         insertNewMatch(match)
         for player in match['players']:
+            player["gameFinishedAt"] = parser.parse(match["gameFinishedAt"])
             insertNewStat(player)
 
 # 4
 def get_leaderboards_this_month():
     currentMonth = datetime.now().month
     leaderboard = getStatsByMonth(currentMonth)
-    logging.info(leaderboard)
     leaderboard = map_leaderboard(leaderboard)
     
     return leaderboard
 
 def start():
-    new_matches = get_last_match_details()
+    new_matches = findNewMatches()
     if not new_matches:
         return
     
@@ -171,3 +174,44 @@ This month's leaderboard.
 {message}
 ```
 """
+
+def findNewMatches():
+    oldMatchIds = getMatchIds()
+    newMatchIds = []
+    new_match_details = []
+    for friend in getPlayers():
+        recent_matches = json.loads(get_player_profile(friend["steam64Id"]))['recentMatches']
+        if recent_matches:
+            for match in recent_matches:
+                matchId = match['id']
+                if matchId not in oldMatchIds and matchId not in newMatchIds:
+                    newMatchIds.append(matchId)
+    if newMatchIds:
+        newMatches = get_matches_by_ids(newMatchIds)
+        if newMatches:
+            for match in find_friends_from_matches(newMatches):
+                new_match_details.append(match)
+    if new_match_details:
+        new_match_details = sorted(new_match_details, key=lambda x: x['gameFinishedAt'])
+
+    return new_match_details
+
+
+def findNewMatchesManually(ids):
+    oldMatchIds = getMatchIds()
+    newMatchIds = []
+    new_match_details = []
+    for friend in getPlayers():
+        recent_matches = json.loads(get_player_profile(friend["steam64Id"]))['recentMatches']
+        if recent_matches:
+            for id in ids:
+                if id not in oldMatchIds and id not in newMatchIds:
+                    newMatchIds.append(id)
+    if newMatchIds:
+        newMatches = get_matches_by_ids(newMatchIds)
+        if newMatches:
+            for match in find_friends_from_matches(newMatches):
+                new_match_details.append(match)
+    if new_match_details:
+        new_match_details = sorted(new_match_details, key=lambda x: x['gameFinishedAt'])
+    return update_leaderboard(new_match_details)
